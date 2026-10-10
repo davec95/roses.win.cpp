@@ -1,0 +1,12 @@
+# roses.win.cpp — standalone Win32 build (one .exe, no extra DLLs)
+CROSS  ?= x86_64-w64-mingw32-g++
+
+roses.exe: roses.win.cpp roses_core.h
+	$(CROSS) -O2 -std=c++20 -Wall -Wextra -static -mwindows \
+		-DUNICODE -D_UNICODE \
+		-o roses.exe roses.win.cpp -lgdi32 -luser32
+
+clean:
+	rm -f roses.exe
+
+.PHONY: clean

@@ -1,0 +1,8 @@
+# Native test binaries (the Windows roses.exe IS committed — it's the deliverable)
+test_core
+test_core_tsan
+*.o
+
+# Python bytecode
+__pycache__/
+*.pyc
